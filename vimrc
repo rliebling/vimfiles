@@ -222,7 +222,8 @@ if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
-    colorscheme railscasts
+    "colorscheme railscasts
+    colorscheme eclipse
     set guitablabel=%M%t
     set lines=40
     set columns=115
@@ -248,7 +249,7 @@ if has("gui_running")
     endif
 
     if has("gui_win32") || has("gui_win32s")
-        set guifont=Consolas:h12
+        set guifont=Consolas:h14
         set enc=utf-8
     endif
 else
@@ -285,7 +286,7 @@ nnoremap <leader>t :CommandT<CR>
 noremap Q gq
 
 "make Y consistent with C and D
-nnoremap Y y$
+"nnoremap Y y$
 
 "bindings for ragtag
 inoremap <M-o>       <Esc>o
