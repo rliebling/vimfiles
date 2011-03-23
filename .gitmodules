@@ -68,7 +68,8 @@
   ignore = dirty
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
-	url = git://github.com/vim-ruby/vim-ruby.git
+        #url = git://github.com/vim-ruby/vim-ruby.git
+	url = git://github.com/rliebling/vim-ruby.git
   ignore = dirty
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
