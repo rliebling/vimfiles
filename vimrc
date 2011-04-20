@@ -270,7 +270,7 @@ endif
 " nmap <silent> <Leader>q <Plug>PeepOpen
 
 silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
-nnoremap <silent> <C-f> :call FindInNERDTree()<CR>
+"nnoremap <silent> <C-f> :call FindInNERDTree()<CR>
 
 "make <c-l> clear the highlight as well as redraw
 nnoremap <C-L> :nohls<CR><C-L>
@@ -293,8 +293,8 @@ inoremap <M-o>       <Esc>o
 inoremap <C-j>       <Down>
 let g:ragtag_global_maps = 1
 
-"mark syntax errors with :signs
-let g:syntastic_enable_signs=1
+" do not mark syntax errors with :signs
+let g:syntastic_enable_signs=0
 
 "key mapping for vimgrep result navigation
 map <A-o> :copen<CR>
