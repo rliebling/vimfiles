@@ -23,6 +23,7 @@ set hlsearch    "hilight searches by default
 set number      "add line numbers
 set showbreak=...
 set wrap linebreak nolist
+set autoread    " automatically re-read buffers if changed on disk
 
 "mapping for command key to map navigation thru display lines instead
 "of just numbered lines
@@ -405,4 +406,7 @@ let g:user_zen_settings = {
   \    'extends' : 'html',
   \  },
  \}
+
+"make Ctrl-C work as copy in visual mode
+vmap  "+y
 
