@@ -139,3 +139,6 @@
 	path = bundle/genutils
 	url = http://github.com/vim-scripts/genutils.git
   ignore = untracked
+[submodule "bundle\\vim-unimpaired"]
+	path = bundle\\vim-unimpaired
+	url = http://github.com/tpope/vim-unimpaired.git
