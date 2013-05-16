@@ -67,10 +67,6 @@
         #url = git://github.com/vim-ruby/vim-ruby.git
 	url = git://github.com/rliebling/vim-ruby.git
   ignore = untracked
-[submodule "bundle/unimpaired"]
-	path = bundle/unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
-  ignore = untracked
 [submodule "bundle/scss-syntax"]
 	path = bundle/scss-syntax
 	url = http://github.com/cakebaker/scss-syntax.vim.git
