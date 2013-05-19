@@ -234,6 +234,9 @@ if has("gui_running")
         colorscheme railscasts
         set guifont=Monospace\ Bold\ 12
     endif
+    if has("gui_gtk2")
+      set guifont=Inconsolata\ Medium\ 14
+    end
 
     if has("gui_mac") || has("gui_macvim")
         set guifont=Menlo:h14
