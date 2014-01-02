@@ -232,8 +232,7 @@ if has("gui_running")
 
     if has("gui_gnome")
         set term=gnome-256color
-        colorscheme railscasts
-        set guifont=Monospace\ Bold\ 12
+        set guifont=Inconsolata\ Medium\ 14
     endif
     if has("gui_gtk2")
       set guifont=Inconsolata\ Medium\ 14
