@@ -419,3 +419,6 @@ let g:CommandTMaxFiles=30000
 let g:pymode_lint_write = 0
 " Disable pymode whitespace trimming
 let g:pymode_utils_whitespaces = 0
+
+" :DiffOrig to diff current buffer with its saved file version
+command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
