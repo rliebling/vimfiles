@@ -425,3 +425,63 @@ command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincm
 
 autocmd FileType java setlocal shiftwidth=4 tabstop=4
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
+
+" unite settings
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#filters#sorter_default#use(['sorter_rank'])
+call unite#set_profile('files', 'smartcase', 1)
+call unite#custom#source('line,outline','matchers','matcher_fuzzy')
+call unite#custom#source('file_rec,file_rec/async', 'max_candidates', 0)
+
+let g:unite_data_directory='~/.vim/.cache/unite'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
+let g:unite_source_rec_max_cache_files=10000
+let g:unite_source_grep_max_candidates=1000
+let g:unite_prompt='» '
+
+"let g:unite_source_grep_command='ack-grep'
+"let g:unite_source_grep_default_opts='--no-heading --no-color '
+"let g:unite_source_grep_recursive_opt=''
+let g:unite_source_grep_command='fastrAck.sh'
+"let g:unite_source_grep_default_opts='-terminal=false'
+let g:unite_source_grep_default_opts=''
+let g:unite_source_grep_recursive_opt=''
+
+function! s:unite_settings()
+  hi PmenuSel guifg=White
+  nmap <buffer> Q <plug>(unite_exit)
+  nmap <buffer> <esc> <plug>(unite_exit)
+  "imap <buffer> <esc> <plug>(unite_exit)
+endfunction
+autocmd FileType unite call s:unite_settings()
+
+nmap <space> [unite]
+nnoremap [unite] <nop>
+
+if has('win32') || has('win64')
+  nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec buffer file_mru bookmark<cr><c-u>
+  nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec<cr><c-u>
+else
+  nnoremap <silent> [unite]<space> :<C-u>Unite -toggle -auto-resize -buffer-name=mixed file_rec/async buffer file_mru bookmark<cr><c-u>
+  " ! arg to file_rec/async means start from project directory (defined by
+  " having .git dir)
+  nnoremap <silent> [unite]f :<C-u>Unite -toggle -auto-resize -buffer-name=files file_rec/async:!<cr><c-u>
+endif
+nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
+nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap  [unite]/ :<C-u>Unite  -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]G :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
+nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
+nnoremap <silent> [unite]r :<C-u>UniteResume<cr>
+
+" Some Linux distributions set filetype in /etc/vimrc.
+" Clear filetype flags before changing runtimepath to force Vim to reload them.
+filetype off
+filetype plugin indent off
+set runtimepath+=/usr/local/go/misc/vim
+filetype plugin indent on
+syntax on
+
