@@ -422,3 +422,6 @@ let g:pymode_utils_whitespaces = 0
 
 " :DiffOrig to diff current buffer with its saved file version
 command! DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
+
+autocmd FileType java setlocal shiftwidth=4 tabstop=4
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4
