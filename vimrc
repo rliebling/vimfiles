@@ -415,3 +415,7 @@ vmap  "+y
 " increase max # files for command-t
 let g:CommandTMaxFiles=30000
 
+" Disable pylint checking every save
+let g:pymode_lint_write = 0
+" Disable pymode whitespace trimming
+let g:pymode_utils_whitespaces = 0
