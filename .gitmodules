@@ -153,3 +153,9 @@
 [submodule "bundle/python-mode"]
 	path = bundle/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "bundle/unite.vim"]
+	path = bundle/unite.vim
+	url = git://github.com/Shougo/unite.vim.git
+[submodule "bundle/vimproc.vim"]
+	path = bundle/vimproc.vim
+	url = git://github.com/Shougo/vimproc.vim.git
