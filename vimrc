@@ -230,10 +230,6 @@ if has("gui_running")
     set lines=40
     set columns=115
 
-    if has("gui_gnome")
-        set term=gnome-256color
-        set guifont=Inconsolata\ Medium\ 14
-    endif
     if has("gui_gtk2")
       set guifont=Inconsolata\ Medium\ 14
     end
