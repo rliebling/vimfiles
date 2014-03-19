@@ -439,9 +439,8 @@ let g:unite_prompt='» '
 "let g:unite_source_grep_command='ack-grep'
 "let g:unite_source_grep_default_opts='--no-heading --no-color '
 "let g:unite_source_grep_recursive_opt=''
-let g:unite_source_grep_command='fastrAck.sh'
-"let g:unite_source_grep_default_opts='-terminal=false'
-let g:unite_source_grep_default_opts=''
+let g:unite_source_grep_command='fastrAck'
+let g:unite_source_grep_default_opts='-terminal=false'
 let g:unite_source_grep_recursive_opt=''
 
 function! s:unite_settings()
@@ -467,8 +466,8 @@ endif
 nnoremap <silent> [unite]y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 nnoremap <silent> [unite]l :<C-u>Unite -auto-resize -buffer-name=line line<cr>
 nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap  [unite]/ :<C-u>Unite  -buffer-name=search grep:.<cr>
-nnoremap <silent> [unite]G :<C-u>UniteWithCursorWord -no-quit -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]/ :<C-u>Unite  -buffer-name=search grep:.<cr>
+nnoremap <silent> [unite]G :<C-u>UniteWithCursorWord -buffer-name=search grep:.<cr>
 nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
 nnoremap <silent> [unite]s :<C-u>Unite -quick-match buffer<cr>
 nnoremap <silent> [unite]r :<C-u>UniteResume<cr>
