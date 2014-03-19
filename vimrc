@@ -480,4 +480,5 @@ filetype plugin indent off
 set runtimepath+=/usr/local/go/misc/vim
 filetype plugin indent on
 syntax on
+autocmd FileType go setlocal autoindent noexpandtab shiftwidth=4 tabstop=4
 
