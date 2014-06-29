@@ -407,7 +407,9 @@ let g:user_zen_settings = {
  \}
 
 "make Ctrl-C work as copy in visual mode
-vmap  "+y
+vnoremap  "+y
+vnoremap <S-Insert> "+y
+
 " increase max # files for command-t
 let g:CommandTMaxFiles=30000
 
