@@ -442,7 +442,11 @@ let g:unite_prompt='» '
 "let g:unite_source_grep_default_opts='--no-heading --no-color '
 "let g:unite_source_grep_recursive_opt=''
 let g:unite_source_grep_command='fastrAck'
-let g:unite_source_grep_default_opts='-terminal=false'
+" unite seems to require this opts field start with a space.  or, maybe a
+" double --.  but using "-terminal=false" makes it misinterpret the output
+" extending the file name until the end of line and adding a ':0' as the line
+" number at the end.  weird.
+let g:unite_source_grep_default_opts=' -terminal=false'
 let g:unite_source_grep_recursive_opt=''
 
 function! s:unite_settings()
